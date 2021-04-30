@@ -1,0 +1,20 @@
+.navbar-brand{
+    font-size: 30px;
+}
+
+.nav-item{
+    font-size: 20px;
+}
+
+.bg-color{
+    background-color: steelblue;
+}
+
+.active{
+   color:whitesmoke;
+}
+
+.img-thumbnail{
+    height: 300px;
+    width: 300px;
+}

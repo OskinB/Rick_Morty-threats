@@ -1,0 +1,19 @@
+.scrollbar {
+  height: 300px;
+  overflow-y: scroll;
+}
+
+.selected {
+  background-color: #4fc3f7;
+  color: white;
+}
+
+.btnMargin {
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
+.btnMargin2 {
+  margin-top: 20px;
+}
+

@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 text-center m-5">
+      <h2>All Current Threats</h2>
+    </div>
+  </div>
+  <div class="row">
+
+    <!-- Urgency Level -->
+    <div class="col-12 text-center m-2">
+      <h5>1 = Low</h5>
+      <h5>2 = Medium</h5>
+      <h5>3 = High</h5>
+    </div>
+  </div>
+  <div class="row">
+
+    <!-- Threat List -->
+    <div class="col-lg-5">
+      <ul class="list-group scrollbar">
+        <li *ngFor="let x of threatList" [class.selected]="x === selectedThreat" (click)="onSelect(x)" class="list-group-item list">{{x.subject}}
+          <div>
+            <span class="badge badge-info badge-pill float-right">Urgency {{x.urgency}}</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Threat Detail -->
+    <div *ngIf="selectedThreat" class="col-lg-7">
+      <div class="card text-center">
+        <div class="card-header">
+          Planet: {{selectedThreat.planet | uppercase}}
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{selectedThreat.subject}}</h5>
+          <p class="card-text">{{selectedThreat.description}}
+          </p>
+          <h6 class="card-text text-center">Urgency: {{selectedThreat.urgency}}</h6>
+        </div>
+        <div class="card-footer text-muted">
+          {{selectedThreat.destruction}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Threat over button -->
+  <div class="row">
+    <div class="col-12 float-left btnMargin2">
+      <button (click)="btnThreatOver()" *ngIf="adminView" type="button" class="btn btn-primary btn">Mark Threat Over</button>
+    </div>
+  </div>
+
+
+  <!-- New Threat button with route-ing -->
+  <div class="row">
+    <div class="col-12 text-center btnMargin">
+      <a routerLink="/newThreat">
+        <button class="btn btn-outline-primary btn-lg">New Threat</button>
+      </a>
+    </div>
+  </div>
+
+</div>

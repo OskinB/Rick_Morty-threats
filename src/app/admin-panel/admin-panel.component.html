@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 text-center m-5">
+      <h2>Admin - Pending Threats</h2>
+    </div>
+  </div>
+  <!-- Pending new threats -->
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <form *ngFor="let x of PendingThreats" class="mt-2">
+        <div class="card text-center">
+          <div class="card-header">
+            Planet: {{x.planet | uppercase}}
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{x.subject}}</h5>
+            <div class="form-group float-right ">
+              <label for="threatUrgency">Urgency</label>
+              <select class="form-control" id="threatUrgency">
+                <option (click)="setUrgencyLow()">1</option>
+                <option (click)="setUrgencyMedium()">2</option>
+                <option (click)="setUrgencyHigh()">3</option>
+              </select>
+            </div>
+            <p class="card-text">{{x.description}}
+            </p>
+          </div>
+          <div class="card-footer text-muted">
+            Destruction Time: {{x.destruction}}
+            <div class="float-right">
+              <button type="button" class="btn btn-secondary btn" (click)="clickDeny(x)">Deny</button>
+              <button type="button" class="btn btn-primary btn" (click)="clickAccept(x)">Accept</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- lína -->
+<hr class="m-2">
+
+<!-- Threat List -->
+<app-threat></app-threat>

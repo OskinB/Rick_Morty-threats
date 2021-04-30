@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 text-center m-5">
+      <h2>Register A New Threat</h2>
+    </div>
+  </div>
+
+    <!-- Add new threat form -->
+  <div class="row">
+    <div class="col-md-6">
+      <form>
+        <div class="form-group">
+          <label for="addNewThreatSubject">Subject*</label>
+          <input [(ngModel)]="subject" name="subject" type="text" class="form-control" id="addNewThreatSubject">
+        </div>
+        <div class="form-group">
+          <label for="addNewThreatPlanet">Planet*</label>
+          <input [(ngModel)]="planet" name="planet" type="text" class="form-control" id="addNewThreatPlanet">
+        </div>
+        <div class="form-group">
+          <label for="addNewThreatDescription">Description*</label>
+          <textarea [(ngModel)]="description" name="description" class="form-control" id="addNewThreatDescription" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="addNewThreatDestruction">Destruction Time</label>
+          <input [(ngModel)]="destruction" name="destruction" type="text" class="form-control" id="addNewThreatDestruction">
+        </div>
+      </form>
+      <div class="float-right">
+        <a routerLink="/threats">
+          <button class="btn btn-outline-ligth btn-lg">Cancel</button>
+        </a>
+        <button (click)="clickSubmit()" type="button" class="btn btn-primary btn-lg">Submit</button>
+      </div>
+    </div>
+
+    <!-- Pic -->
+    <div class="col-md-6">
+      <img src="https://img00.deviantart.net/6122/i/2014/051/5/c/meeseeks_by_michaelogicalm-d77a0fl.png" width="600px" class="rounded mx-auto d-block" alt="Mr.Meeseeks">
+    </div>
+  </div>
+
+</div>

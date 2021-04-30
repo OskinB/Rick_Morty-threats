@@ -1,0 +1,10 @@
+.scrollbar {
+    height:250px;
+    overflow-y: scroll;
+  }
+
+.form-control{
+    height: 30px;
+    width: 58px;
+    font-weight: bold;
+}
